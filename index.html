@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/navbar_styles.css">
+  <link rel="stylesheet" href="css/product_images_styles.css">
+  <link rel="stylesheet" href="css/product_info_styles.css">
+  <link rel="stylesheet" href="css/lightbox_styles.css">
+
+  <title>E-commerce product page</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <nav class="navbar">
+        <div class="navbar-left">
+          <div id="navbar-menu" class="navbar-menu-button">
+            <img src="images/icon-menu.svg" alt="">
+          </div>
+          <div class="navbar-logo">
+            <img src="images/logo.svg" alt="">
+          </div>
+          <ul class="navbar-menu">
+            <div class="navbar-close">
+              <img src="images/icon-close.svg" alt="">
+            </div>
+            <li>Collections</li>
+            <li>Men</li>
+            <li>Women</li>
+            <li>Contact</li>
+            <li>About</li>
+          </ul>
+        </div>
+        <div class="navbar-right">
+          <div class="navbar-cart">
+            <img src="images/icon-cart.svg" alt="" class="">
+          </div>
+          <div class="cart-popup">
+            <div class="cart-header">Cart</div>
+            <hr style="opacity: 0.3; margin: 0;">
+            <div class="cart-contents">
+              <div class="cart-empty active">
+                Your cart is empty.
+              </div>
+              <div class="cart-filled">
+                <div class="item">
+                  <img src="images/image-product-1-thumbnail.jpg" alt=""
+                    style="height: 50px; width: 50px; border-radius: 5px;">
+                  <div class="item-text">
+                    <p class="item-name">Fall Limited Edition Sneakers</p>
+                    <p class="item-price">$125.00</p>
+                  </div>
+                  <img src="images/icon-delete.svg" style="height: fit-content;" onclick="clearCart()">
+                </div>
+                <button class="checkout">Checkout</button>
+              </div>
+            </div>
+          </div>
+          <div class="navbar-avatar">
+            <img src="images/image-avatar.png" alt="" class="">
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="product">
+        <div class="product-images">
+          <div class="product-image">
+            <img src="images/image-product-1.jpg" alt="" class="current" name="1">
+            <img src="images/image-product-2.jpg" alt="" class="" name="2">
+            <img src="images/image-product-3.jpg" alt="" class="" name="3">
+            <img src="images/image-product-4.jpg" alt="" class="" name="4">
+            <div class="prev button">
+              <img src="images/icon-previous.svg" alt="">
+            </div>
+            <div class="next button">
+              <img src="images/icon-next.svg" alt="">
+            </div>
+          </div>
+          <div class="product-thumbnails">
+            <div class="current"><img src="images/image-product-1-thumbnail.jpg" alt="" onclick="selectImage(this);" name="1"></div>
+            <div><img src="images/image-product-2-thumbnail.jpg" alt="" onclick="selectImage(this);" name="2"></div>
+            <div><img src="images/image-product-3-thumbnail.jpg" alt="" onclick="selectImage(this);" name="3"></div>
+            <div><img src="images/image-product-4-thumbnail.jpg" alt="" onclick="selectImage(this);" name="4"></div>
+          </div>
+        </div>
+        <div class="product-info">
+          <p class="product-company">SNEAKER COMPANY</p>
+          <p class="product-name">Fall Limited Edition Sneakers</p>
+          <p class="product-description">These low-profile sneakers are your perfect casual wear companion. Featuring a
+            durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+          <div class="product-price">
+            <div class="product-price-new">
+              $125.00 <span class="product-discount">50%</span>
+            </div>
+            <div class="product-price-old">$250.00</div>
+          </div>
+          <div class="product-actions">
+            <div class="product-counter">
+              <div class="product-counter-minus" onclick="removeItem()">
+                <img src="images/icon-minus.svg" alt="" style="padding-bottom: 3px;">
+              </div>
+              <div class="product-counter-value">0</div>
+              <div class="product-counter-plus" onclick="addItem()">
+                <img src="images/icon-plus.svg" alt="">
+              </div>
+            </div>
+            <div class="product-cart"  onclick="addItem()"><img src="images/icon-cart.svg" alt=""> Add to cart
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="lightbox">
+    <div class="lightbox-content">
+      <div class="lightbox-close">
+        <img src="images/icon-close.svg" alt="" style="height: 20px;">
+      </div>
+      <div class="lightbox-product-image">
+        <img src="images/image-product-1.jpg" alt="" class="current" name="1">
+        <img src="images/image-product-2.jpg" alt="" class="" name="2">
+        <img src="images/image-product-3.jpg" alt="" class="" name="3">
+        <img src="images/image-product-4.jpg" alt="" class="" name="4">
+        <div class="prev button">
+          <img src="images/icon-previous.svg" alt="">
+        </div>
+        <div class="next button">
+          <img src="images/icon-next.svg" alt="">
+        </div>
+      </div>
+
+      <div class="lightbox-product-thumbnails">
+        <div class="current"><img src="images/image-product-1-thumbnail.jpg" alt="" onclick="selectImageLB(this);" name="1"></div>
+        <div><img src="images/image-product-2-thumbnail.jpg" alt="" onclick="selectImageLB(this);" name="2"></div>
+        <div><img src="images/image-product-3-thumbnail.jpg" alt="" onclick="selectImageLB(this);" name="3"></div>
+        <div><img src="images/image-product-4-thumbnail.jpg" alt="" onclick="selectImageLB(this);" name="4"></div>
+      </div>
+    </div>
+  </div>
+  <script src="js/image_scripts.js"></script>
+  <script src="js/cart_scripts.js"></script>
+</body>
+
+</html>
